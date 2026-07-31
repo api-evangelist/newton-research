@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.newtonresearch.ai/
+standards:
+  - id: soc2
+    conforms: true
+    evidence: >-
+      Newton Research publicly states it is SOC 2 compliant on its homepage
+      (www.newtonresearch.ai), alongside a data-security model where customer
+      data remains on the customer's own instance.
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      Newton Research publicly states GDPR compliance on its homepage
+      (www.newtonresearch.ai) and publishes a privacy policy at
+      /privacy-policy.
+  - id: ccpa
+    conforms: true
+    evidence: >-
+      Newton Research publicly states CCPA compliance on its homepage
+      (www.newtonresearch.ai).
+  - id: oauth2
+    conforms: false
+    evidence: No public API or OAuth 2.0 authorization surface was discoverable.
+  - id: oidc
+    conforms: false
+    evidence: >-
+      No /.well-known/openid-configuration on the website host (404); no OIDC
+      discovery.
