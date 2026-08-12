@@ -1,0 +1,78 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of the Newton Research web hosts
+note: >-
+  Every probed /.well-known/ path returned 404 on both the www and apex hosts.
+  This file records a verified ABSENCE, not a presence — no WellKnown or
+  SecurityTxt pointer is emitted in apis.yml, because Newton Research does not
+  serve any of these documents. The site is a Webflow-hosted marketing site
+  behind Cloudflare with no developer surface. The /.well-known/agent-card.json,
+  /.well-known/agent.json and /.well-known/adagents.json probes are recorded here
+  as well: Newton's own CEO letter states the company "leverages MCP (Model
+  Context Protocol) and A2A (agent to agent protocol) today" and participates in
+  the Ad Context Protocol (AdCP), but no agent card, adagents manifest, or MCP
+  endpoint is published on any host the company controls.
+hosts:
+  - host: www.newtonresearch.ai
+    paths:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/adagents.json
+        status: 404
+        file: null
+  - host: newtonresearch.ai
+    paths:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/adagents.json
+        status: 404
+        file: null
+summary:
+  paths_probed: 18
+  hits: 0
+  documents_saved: 0
+checked: '2026-08-12'

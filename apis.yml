@@ -31,7 +31,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-12'
 tags:
 - Company
 - Ai Ml
@@ -65,8 +65,31 @@ common:
   url: https://www.newtonresearch.ai/
 - type: LLMsTxt
   url: llms/newton-research-llms.txt
+- type: Plans
+  url: plans/newton-research-plans-pricing.yml
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-12'
   status: minimal
-  artifacts_added: 3
+  artifacts_added: 2
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Newton Research claims in its CEO's own AdCP letter to leverage MCP and A2A
+    "today", but serves no endpoint for either — all 18 /.well-known/ probes
+    across both company hosts 404, no api/docs/developer/mcp subdomain resolves,
+    and the only route to the platform is the "someone from our team will
+    follow-up" contact form.
+  evidence:
+  - url: https://www.newtonresearch.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://www.newtonresearch.ai/.well-known/adagents.json
+    status: 404
+  - url: https://www.newtonresearch.ai/mcp
+    status: 404
+  - url: https://www.newtonresearch.ai/pricing
+    status: 404
+  - url: https://www.newtonresearch.ai/contact
+    status: 200
+  checked: '2026-08-12'

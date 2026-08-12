@@ -1,29 +1,78 @@
-generated: '2026-07-20'
+generated: '2026-08-12'
 method: searched
-source: https://www.newtonresearch.ai/
+source: >-
+  https://www.newtonresearch.ai/ and
+  https://www.newtonresearch.ai/blog/newton-research-adcp-q-and-a
+note: >-
+  Newton Research claims three agent-interoperability protocols in its own
+  published writing (AdCP, MCP, A2A) but ships no discoverable endpoint,
+  manifest, or schema for any of them. Those three entries are recorded as
+  conforms:false — the standard here is a callable, discoverable surface, and a
+  marketing claim is not one. Every /.well-known/ probe on both company hosts
+  404s (see well-known/newton-research-well-known.yml, 18 paths, 0 hits).
 standards:
   - id: soc2
     conforms: true
     evidence: >-
-      Newton Research publicly states it is SOC 2 compliant on its homepage
-      (www.newtonresearch.ai), alongside a data-security model where customer
-      data remains on the customer's own instance.
+      Newton Research publicly states "SOC2 compliant" in the security section of
+      its homepage (www.newtonresearch.ai, HTTP 200, re-verified 2026-08-12),
+      alongside a data-security model where customer data remains on the
+      customer's own instance ("No movement of data or training off your
+      knowledge"). Attestation report is not published; no trust center or
+      compliance portal was found.
   - id: gdpr
     conforms: true
     evidence: >-
-      Newton Research publicly states GDPR compliance on its homepage
-      (www.newtonresearch.ai) and publishes a privacy policy at
-      /privacy-policy.
+      Newton Research publicly states "GDPR and CCPA compliant" on its homepage
+      (re-verified 2026-08-12) and publishes a privacy policy at
+      https://www.newtonresearch.ai/privacy-policy.
   - id: ccpa
     conforms: true
     evidence: >-
-      Newton Research publicly states CCPA compliance on its homepage
-      (www.newtonresearch.ai).
+      Newton Research publicly states "GDPR and CCPA compliant" on its homepage
+      (re-verified 2026-08-12).
+  - id: adcp
+    conforms: false
+    evidence: >-
+      CEO John Hoctor's public letter
+      (/blog/newton-research-adcp-q-and-a) endorses the Ad Context Protocol as
+      "an open source framework – and agent-to-agent protocol – that outlines
+      basic rules of how different AI agents that touch advertising should work
+      together," and Newton is described in the AdCP ecosystem as an
+      implementer. However, no AdCP surface is discoverable: GET
+      /.well-known/adagents.json returns 404 on both www.newtonresearch.ai and
+      newtonresearch.ai, and no sales-agent, signals-agent, or media-buy endpoint
+      is published. Claim only, no callable contract.
+  - id: mcp
+    conforms: false
+    evidence: >-
+      The same CEO letter states "Newton also leverages MCP (Model Context
+      Protocol) and A2A (agent to agent protocol) today." No MCP server URL is
+      published anywhere on the site; https://www.newtonresearch.ai/mcp returns
+      404 and mcp.newtonresearch.ai does not resolve (NXDOMAIN). No tools/list
+      surface exists to introspect. Claim only.
+  - id: a2a
+    conforms: false
+    evidence: >-
+      A2A is claimed in the CEO letter but no Agent Card is served:
+      /.well-known/agent-card.json and the legacy /.well-known/agent.json both
+      return 404 on www.newtonresearch.ai and newtonresearch.ai. Per pipeline
+      rules an agent card is never authored on a provider's behalf, so no
+      AgentCard artifact or pointer exists for this company.
   - id: oauth2
     conforms: false
-    evidence: No public API or OAuth 2.0 authorization surface was discoverable.
+    evidence: >-
+      No public API or OAuth 2.0 authorization surface was discoverable.
+      /.well-known/oauth-authorization-server and
+      /.well-known/oauth-protected-resource both return 404 on both hosts.
   - id: oidc
     conforms: false
     evidence: >-
-      No /.well-known/openid-configuration on the website host (404); no OIDC
-      discovery.
+      No /.well-known/openid-configuration on either host (404); no OIDC
+      discovery document published.
+  - id: rfc9457
+    conforms: false
+    evidence: >-
+      No published OpenAPI or error reference exists to assert a problem+json
+      error envelope against.
+checked: '2026-08-12'

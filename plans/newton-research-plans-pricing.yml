@@ -1,0 +1,36 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.newtonresearch.ai/contact
+plan_count: 0
+currency: null
+note: >-
+  Newton Research publishes no pricing page and no plan tiers. A direct probe of
+  https://www.newtonresearch.ai/pricing returns 404, and the path does not appear
+  in the site's own sitemap.xml (which enumerates every published page: home,
+  solutions, contact, about, careers, resources, privacy-policy, four
+  solutions/* pages, three event pages, eight use-case/* pages and the blog
+  posts). The only commercial entry point is the contact form on
+  /contact and the homepage "Get In Touch" form, whose own copy reads "Want to
+  try Newton out for yourself? Enter your information and someone from our team
+  will follow-up" — i.e. an enterprise sales-qualified motion, not
+  self-service signup. There is no trial, no free tier, and no published quota,
+  overage, or seat pricing to record.
+access:
+  self_service: false
+  trial: false
+  free_tier: false
+  contact_sales_only: true
+  signup_url: null
+  pricing_url: null
+plans: []
+evidence:
+  - url: https://www.newtonresearch.ai/pricing
+    status: 404
+    note: No pricing page published.
+  - url: https://www.newtonresearch.ai/sitemap.xml
+    status: 200
+    note: Full page inventory; contains no pricing, plans, signup, or login path.
+  - url: https://www.newtonresearch.ai/contact
+    status: 200
+    note: Contact form is the only route to commercial terms.
+checked: '2026-08-12'
